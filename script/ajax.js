@@ -1,9 +1,12 @@
 window.addEventListener('load', () => {
+    const button = document.getElementById('button');
     let myRequest;
 
     setInterval(() => {
         getAJAX();
     }, 2000);
+
+    button.addEventListener('click', getAJAX);
     
     function getAJAX() {
         myRequest = new XMLHttpRequest();
@@ -14,9 +17,9 @@ window.addEventListener('load', () => {
     
     function checkData() {
         if (myRequest.readyState === 4 && myRequest.status === 200) {
-            let element1 = document.getElementById("platzhalter");
+            let element1 = document.getElementById("placeholder");
             let text1 = myRequest.responseText;
-            element1.innerHTML = text1;
+            element1.textContent = text1;
         }
     }
 });
