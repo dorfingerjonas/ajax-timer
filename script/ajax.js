@@ -3,7 +3,6 @@ window.addEventListener('load', () => {
 
     setInterval(() => {
         getAJAX();
-        console.log('hell yeah');
     }, 2000);
     
     function getAJAX() {
@@ -15,8 +14,8 @@ window.addEventListener('load', () => {
     
     function checkData() {
         if (myRequest.readyState === 4 && myRequest.status === 200) {
-            var element1 = document.getElementById("platzhalter");
-            var text1 = myRequest.responseText;
+            let element1 = document.getElementById("platzhalter");
+            let text1 = myRequest.responseText;
             element1.innerHTML = text1;
         }
     }
